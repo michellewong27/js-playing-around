@@ -1,0 +1,31 @@
+body {
+    /* need for the whole window some %, no matter the screen size */
+    min-height: 100vh;
+    display: flex;
+    /* horizontally in center */
+    justify-content: center;
+    /* vertically in center */
+    align-items: center;
+}
+
+.colorBtn{
+    /* vertically, horizontally */
+    padding: 0.25rem 0.5rem;
+    border: 3px solid #fefefe;
+    border-radius: 7px;
+    color: #fefefe;
+    /* 0.6 opacity */
+    background:  rgba(0,0,0,0.6);
+    font-size: 1.5rem;
+    /* capitalize text */
+    text-transform: capitalize;
+    /* changes to pointer when you hover over button */
+    cursor: pointer;
+    /* gets rid of blue outline */
+    outline: none;
+}
+
+/* when you hover, add these properties */
+.colorBtn:hover{
+    background: rgb(0,0,0);
+}
