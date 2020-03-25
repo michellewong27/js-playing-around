@@ -10,6 +10,10 @@ const colors = ['yellow', 'red', 'green', '#3b5998'];
 colorBtn.addEventListener('click', changeColor);
 
 function changeColor (){
-    //grabbing body, selecting style, and background color
-    bodyBcg.style.backgroundColor = colors[2];
+    //grabbing body, selecting style, background color & set to random color in array
+        //math random is in between 0 and 0.999 but now making sure it rounds down now
+            // & multiply by array length which will give 4
+            //So, gives up number in between 0 and 4
+    let random = Math.floor(Math.random()*colors.length);
+    bodyBcg.style.backgroundColor = colors[random];
 }
