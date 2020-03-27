@@ -1,19 +1,18 @@
-//selected color by its class name
-const colorBtn = document.querySelector('.colorBtn');
-//selecting by tag name of body
+const hexNumbers = [0,1,2,3,4,5,6,7,8,9,'A', 'B', 'C', 'D','E','F'];
+const hexBtn = document.querySelector('.hexBtn');
 const bodyBcg = document.querySelector('body');
+const hex = document.querySelector('.hex');
 
-//array of background colors well use
-const colors = ['yellow', 'red', 'green', '#3b5998'];
+hexBtn.addEventListener('click', getHex);
 
-//add event listener on click go to callbackfunction
-colorBtn.addEventListener('click', changeColor);
+function getHex (){
+    let hexColor = '#';
+    //Generate combo from hexNumbers array
 
-function changeColor (){
-    //grabbing body, selecting style, background color & set to random color in array
-        //math random is in between 0 and 0.999 but now making sure it rounds down now
-            // & multiply by array length which will give 4
-            //So, gives up number in between 0 and 4
-    let random = Math.floor(Math.random()*colors.length);
-    bodyBcg.style.backgroundColor = colors[random];
+    for (let i = 0; i < 6; i++){
+        let random = Math.floor(Math.random()*hexNumbers.length);
+        hexColor += hexNumbers[random];
+    }
+    bodyBcg.style.backgroundColor = hexColor;
+    hex.innerHTML= hexColor;
 }
